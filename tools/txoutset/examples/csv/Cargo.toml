@@ -1,0 +1,16 @@
+[package]
+name = "txoutset-csv"
+version = "0.3.0"
+edition = "2021"
+
+[dependencies]
+bitcoin.workspace = true
+env_logger = "0.11.8"
+hex = "0.4.3"
+
+[dependencies.txoutset]
+path = "../../"
+
+[dependencies.clap]
+version = "4.5.51"
+features = ["derive"]

@@ -1,6 +1,7 @@
 .venv/
 ignore/
 snapshot/
-.DS_Store
+*.DS_Store
 __pycache__/
 hits.txt
+Cargo.lock
