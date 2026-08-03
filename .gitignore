@@ -3,5 +3,7 @@ ignore/
 snapshot/
 *.DS_Store
 __pycache__/
-hits.txt
 Cargo.lock
+hits.txt
+test/
+tools/target/
