@@ -56,7 +56,7 @@ import os  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
 
-import prng as yam  # noqa: E402
+import yamagat_prng as yam  # noqa: E402
 import btc_derive as btc
 from stm32_uids import generate_stm32_uid
 from utxo_filter import BloomFilter, iter_scripts
