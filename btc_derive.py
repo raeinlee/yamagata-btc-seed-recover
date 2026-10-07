@@ -235,16 +235,16 @@ def selftest():
         "873dff81c02f525623fd1fe5167eac3a55a049de3d314bb42ee227ffed37d508"
     )
 
-    # 4. End-to-end BIP84 vector: mnemonic -> seed -> m/84'/1'/0'/0/0 pubkey.
+    # 4. End-to-end BIP84 vector: mnemonic -> seed -> m/84'/0'/0'/0/0 pubkey.
     #    Exercises PBKDF2, BIP32 hardened+normal steps, and secp256k1 together.
     seed = mnemonic_to_seed(_ABANDON)
-    k0 = derive_priv(seed, parse_path("m/84'/1'/0'/0/0"))
+    k0 = derive_priv(seed, parse_path("m/84'/0'/0'/0/0"))
     assert _ser_pub(k0).hex() == (
         "0330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c"
     ), "BIP84 pubkey mismatch"
 
-    # 5. BIP86 (taproot) key-path vector: m/86'/1'/0'/0/0 tweaked output key.
-    kt = derive_priv(seed, parse_path("m/86'/1'/0'/0/0"))
+    # 5. BIP86 (taproot) key-path vector: m/86'/0'/0'/0/0 tweaked output key.
+    kt = derive_priv(seed, parse_path("m/86'/0'/0'/0/0"))
     assert spk_p2tr(kt).hex() == (
         "5120a60869f0dbcf1dc659c9cecbaf8050135ea9e8cdc487053f1dc6880949dc684c"
     ), "BIP86 output key mismatch"
